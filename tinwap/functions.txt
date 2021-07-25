@@ -1,0 +1,9 @@
+function s(timerSelector){
+  let timer = document.querySelector(timerSelector);
+  if(timer == null){
+    return -1;
+  }
+  let text = timer?.innerText; // 00:00:00
+  let m = text.match(/(\d\d):(\d\d):(\d\d)/)
+  return (Number(m[1])*3600 + Number(m[2]) * 60 + Number(m[3]));
+}
