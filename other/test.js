@@ -1,5 +1,7 @@
-function SDPInject(){
-  console.log('SDPInjecting');
+function SDPInject(inform = false){
+  if(inform){
+    alert('SDPInjecting');
+  }
   function InjectJsonHook(modify, handle){
     Response.prototype.MyJson = Response.prototype.json;
     Response.prototype.json = async function () {
