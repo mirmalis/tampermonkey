@@ -1,7 +1,5 @@
-function SDPInject(inform = false){
-  if(inform){
-    alert('SDPInjecting');
-  }
+function SDPInject(){
+  alert('SDPInjecting');
   function InjectJsonHook(modify, handle){
     Response.prototype.MyJson = Response.prototype.json;
     Response.prototype.json = async function () {
@@ -12,7 +10,7 @@ function SDPInject(inform = false){
     };
   }
   InjectJsonHook(
-    (Response, Data) => Data,
+    async (Response, Data) => Data,
     async (Response, Data) => {
       if (!Data) {
         return;
