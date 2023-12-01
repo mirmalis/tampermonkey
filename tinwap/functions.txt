@@ -1,4 +1,5 @@
 function s(timerSelector){
+  console.log("gihub");
   let timer = document.querySelector(timerSelector);
   if(timer == null){
     return -1;
