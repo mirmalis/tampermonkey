@@ -1,5 +1,7 @@
+function SDPAltert(){
+  setInterval(() => alert(123), 5000);
+}
 function SDPInject(){
-  alert('SDPInjecting');
   function InjectJsonHook(modify, handle){
     Response.prototype.MyJson = Response.prototype.json;
     Response.prototype.json = async function () {
@@ -9,6 +11,7 @@ function SDPInject(){
       return modifiedJson;
     };
   }
+  alert('SDPInjecting');
   InjectJsonHook(
     async (Response, Data) => Data,
     async (Response, Data) => {
